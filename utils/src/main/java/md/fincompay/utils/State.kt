@@ -22,7 +22,7 @@ sealed class State<out T> {
 
     val isSuccess: Boolean get() = this is Success
     val isLoading: Boolean get() = this is Loading
-    val isError: Boolean get() = this is Error
+    val isError: Boolean get() = this is kotlin.Error
 
 
     inline fun<reified R> map(crossinline transform: (value: T?) -> R): State<R> {
